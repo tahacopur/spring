@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="injectConfigId" class="_03.spel.model.InjectConfig"/>
+
+<bean id="personId" class="_03.spel.model.Person">
+	<property name="name" value="#{injectConfigId.name}"/>
+	<property name="surname" value="#{injectConfigId.surname}"/>
+	<property name="birthYear" value="#{injectConfigId.birthYear}"/>
+</bean>
+
+</beans>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+
+<!-- burada context tagini kullanabilmek icin XML tanimiina ekstra bilgi eklememiz gereklidir
+ -->
+	<context:component-scan base-package="_02.collection.injection.annotation.model" />
+
+<!--util:list util:set vs kullanabilmek icin extra XML tanimi ekliyoruz.  -->
+	<util:list id="myAnnotationList">
+		<value>element1</value>
+		<value>element2</value>
+	</util:list>
+
+	<util:list id="myAnnotationPersonList">
+		<bean id="person1" class="_02.collection.injection.annotation.model.Person">
+			<property name="name" value="test name" />
+			<property name="surname" value="test surname" />
+		</bean>
+
+		<bean id="person2" class="_02.collection.injection.annotation.model.Person">
+			<property name="name" value="test name2" />
+			<property name="surname" value="test surname2" />
+		</bean>
+
+		<bean id="person3" class="_02.collection.injection.annotation.model.Person">
+			<property name="name" value="test name3" />
+			<property name="surname" value="test surname3" />
+		</bean>
+
+		<ref bean="person5" />
+	</util:list>
+	
+	<util:set id="myAnnotationSet">
+		<value type="int">100</value>
+		<value type="int">200</value>
+	</util:set>
+
+	<bean id="person5" class="_02.collection.injection.annotation.model.Person">
+		<property name="name" value="test name5" />
+		<property name="surname" value="test surname5" />
+	</bean>
+	
+	<util:map id="myAnnotationMap">
+		<entry key="key1">
+			<value>value1</value>
+		</entry>
+		
+		<entry key="key2">
+			<value>value2</value>
+		</entry>
+	</util:map>
+	
+	<util:properties id="myAnnotationProperties">
+		<prop key="name">testname</prop>
+		<prop key="surname">testsurname</prop>
+	</util:properties>
+
+</beans>

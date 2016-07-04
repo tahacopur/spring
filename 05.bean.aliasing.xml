@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+        
+ 
+
+<bean id="name1" name="name2 name3,name4;name5" class="_05.bean.aliasing.model.Person"/>
+
+<alias name="name1" alias="name6"/>
+
+
+<!-- default olarak singletondir. -->
+<bean id="personSingleton" class="_05.bean.aliasing.model.Person"/>
+
+<bean id="personPrototype" class="_05.bean.aliasing.model.Person" scope="prototype"/>
+
+
+</beans>

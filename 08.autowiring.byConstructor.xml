@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+        
+ 
+<bean id="employeeId" class="_08.autowiring.constructor.model.Employee" autowire="constructor">
+	<property name="name" value="Levent"/>
+	<property name="surname" value="Erguder"/>
+</bean>
+
+
+<!-- autowire constructor , constructor metot uzerinden gerceklesir.
+ -->
+
+<bean id="addressId" class="_08.autowiring.constructor.model.Address">
+	<property name="city" value="Istanbul"/>
+</bean>
+
+<bean id="addressId2" class="_08.autowiring.constructor.model.Address" autowire-candidate="false">
+	<property name="city" value="Istanbul not wire"/>
+</bean>
+
+
+</beans>

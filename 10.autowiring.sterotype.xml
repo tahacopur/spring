@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+       
+<!-- ilgili tanimli paketlerdeki @Component @Repository @Service @Controller annotationlarini arar!
+birden fazla package belirtebiliriz. ve @Autowired yarrdimi ile ilgili injectleri gerceklestirir.
+bu tagi kullanabilmek icn ilgili namespace eklenmelidir.
+
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+
+ -->
+<context:component-scan base-package="_10.autowiring.stereotype.model _10.autowiring.stereotype.service _10.autowiring.stereotype.dao"/>
+
+
+<bean id="departmentId" class="java.lang.String">
+	<constructor-arg value="Software Enginering.."/>
+</bean>
+
+
+<!-- 
+<bean id="employeeService" class="_10.autowiring.stereotype.service.EmployeeService">
+
+
+</bean>
+
+<bean id="employeeDAO" class="_10.autowiring.stereotype.dao.EmployeeDAO">
+</bean>
+ -->
+
+</beans>

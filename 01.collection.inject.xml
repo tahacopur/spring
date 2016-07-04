@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="collectionId" class="_01.collection.model.CollectionInjection">
+		<property name="myList">
+			<list>
+				<value>element1</value>
+				<value>element2</value>
+				<value>element3</value>
+				<value>element4</value>
+				<value>element5</value>
+			</list>
+		</property>
+
+		<property name="personList">
+			<list>
+				<bean id="person1" class="_01.collection.model.Person">
+					<property name="name" value="test name" />
+					<property name="surname" value="test surname" />
+				</bean>
+
+				<bean id="person2" class="_01.collection.model.Person">
+					<property name="name" value="test name2" />
+					<property name="surname" value="test surname2" />
+				</bean>
+
+				<bean id="person3" class="_01.collection.model.Person">
+					<property name="name" value="test name3" />
+					<property name="surname" value="test surname3" />
+				</bean>
+				
+				<ref bean="person5"/>
+
+			</list>
+		</property>
+
+		<property name="mySet">
+			<set>
+				<value>100</value>
+				<value>200</value>
+				<value>300</value>
+				<value>400</value>
+			</set>
+		</property>
+
+
+		<property name="myMap">
+			<map>
+				<entry key="key1">
+					<value>value1</value>
+				</entry>
+
+				<entry key="key2">
+					<value>value1</value>
+				</entry>
+
+				<entry key="key3">
+					<bean id="person4" class="_01.collection.model.Person">
+						<property name="name" value="test name4" />
+						<property name="surname" value="test surname4" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+		
+		
+		<property name="myProperties">
+			<props>
+				<prop key="prop1">value1</prop>
+				<prop key="prop2">value2</prop>
+				<prop key="prop3">value3</prop>
+				<prop key="prop4">value4</prop>
+			</props>
+		
+		</property>
+		
+
+	</bean>
+
+
+	<bean id="person5" class="_01.collection.model.Person">
+		<property name="name" value="test name5" />
+		<property name="surname" value="test surname5" />
+	</bean>
+
+</beans>
